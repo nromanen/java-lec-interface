@@ -88,12 +88,12 @@ const Part6 = () => {
               <div className="ml-8">System.out.println("Мяу!");</div>
               <div className="ml-4">{'}'}</div>
               <div>{'}'}</div>
-              <div className="mt-3 text-gray-500">// Поліморфізм в дії:</div>
+              <div className="mt-3 text-gray-500">{'// Поліморфізм в дії:'}</div>
               <div className="bg-green-50 p-2 rounded mt-2">
                 <div>Animal animal1 = <span className="text-blue-600">new</span> Dog();</div>
                 <div>Animal animal2 = <span className="text-blue-600">new</span> Cat();</div>
-                <div className="mt-1">animal1.makeSound(); <span className="text-gray-500">// Виведе: Гав!</span></div>
-                <div>animal2.makeSound(); <span className="text-gray-500">// Виведе: Мяу!</span></div>
+                <div className="mt-1">animal1.makeSound(); <span className="text-gray-500">{'// Виведе: Гав!'}</span></div>
+                <div>animal2.makeSound(); <span className="text-gray-500">{'// Виведе: Мяу!'}</span></div>
               </div>
             </div>
           </div>
@@ -156,18 +156,18 @@ const Part6 = () => {
               <div className="bg-green-50 p-3 rounded">
                 <div className="text-green-700 font-bold mb-2">✅ З інтерфейсом - легко змінити:</div>
                 <div>List&lt;String&gt; list = <span className="text-blue-600">new</span> ArrayList&lt;&gt;();</div>
-                <div className="text-gray-500">// Пізніше можна легко замінити на:</div>
+                <div className="text-gray-500">{'// Пізніше можна легко замінити на:'}</div>
                 <div>List&lt;String&gt; list = <span className="text-blue-600">new</span> LinkedList&lt;&gt;();</div>
-                <div className="text-gray-500">// або</div>
+                <div className="text-gray-500">{'// або'}</div>
                 <div>List&lt;String&gt; list = <span className="text-blue-600">new</span> Vector&lt;&gt;();</div>
-                <div className="mt-2 text-green-600">// Весь інший код залишається без змін!</div>
+                <div className="mt-2 text-green-600">{'// Весь інший код залишається без змін!'}</div>
               </div>
 
               <div className="bg-red-50 p-3 rounded">
                 <div className="text-red-700 font-bold mb-2">❌ Без інтерфейсу - складно:</div>
                 <div>ArrayList&lt;String&gt; list = <span className="text-blue-600">new</span> ArrayList&lt;&gt;();</div>
-                <div className="mt-2 text-red-600">// Якщо захочете змінити на LinkedList,</div>
-                <div className="text-red-600">// треба міняти тип СКРІЗЬ в коді!</div>
+                <div className="mt-2 text-red-600">{'// Якщо захочете змінити на LinkedList,'}</div>
+                <div className="text-red-600">{'// треба міняти тип СКРІЗЬ в коді!'}</div>
               </div>
             </div>
           </div>
@@ -195,14 +195,14 @@ const Part6 = () => {
             <h4 className="font-bold text-gray-700 mb-3">❌ Погано - без DI:</h4>
             <div className="font-mono text-sm bg-red-50 p-3 rounded">
               <div><span className="text-blue-600">class</span> UserService {'{'}</div>
-              <div className="ml-4 text-gray-500">// Жорстка залежність від конкретної реалізації</div>
+              <div className="ml-4 text-gray-500">{'// Жорстка залежність від конкретної реалізації'}</div>
               <div className="ml-4"><span className="text-blue-600">private</span> MySQLDatabase database = <span className="text-blue-600">new</span> MySQLDatabase();</div>
               <div className="ml-4"></div>
               <div className="ml-4"><span className="text-blue-600">public void</span> saveUser(User user) {'{'}</div>
               <div className="ml-8">database.save(user);</div>
               <div className="ml-4">{'}'}</div>
               <div>{'}'}</div>
-              <div className="mt-2 text-red-600">// Проблема: важко замінити базу даних або протестувати</div>
+              <div className="mt-2 text-red-600">{'// Проблема: важко замінити базу даних або протестувати'}</div>
             </div>
           </div>
 
@@ -229,7 +229,7 @@ const Part6 = () => {
                 <div><span className="text-blue-600">class</span> UserService {'{'}</div>
                 <div className="ml-4"><span className="text-blue-600">private</span> Database database;</div>
                 <div className="ml-4"></div>
-                <div className="ml-4 text-gray-500">// Залежність передається ззовні!</div>
+                <div className="ml-4 text-gray-500">{'// Залежність передається ззовні!'}</div>
                 <div className="ml-4"><span className="text-blue-600">public</span> UserService(Database database) {'{'}</div>
                 <div className="ml-8">this.database = database;</div>
                 <div className="ml-4">{'}'}</div>
@@ -257,17 +257,17 @@ const Part6 = () => {
             <div className="font-mono text-sm">
               <div><span className="text-blue-600">public class</span> Main {'{'}</div>
               <div className="ml-4"><span className="text-blue-600">public static void</span> main(String[] args) {'{'}</div>
-              <div className="ml-8 text-gray-500">// Можемо легко міняти реалізацію!</div>
+              <div className="ml-8 text-gray-500">{'// Можемо легко міняти реалізацію!'}</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Для продакшну - MySQL</div>
+              <div className="ml-8 text-gray-500">{'// Для продакшну - MySQL'}</div>
               <div className="ml-8">Database prodDb = <span className="text-blue-600">new</span> MySQLDatabase();</div>
               <div className="ml-8">UserService prodService = <span className="text-blue-600">new</span> UserService(prodDb);</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Для тестування - mock</div>
+              <div className="ml-8 text-gray-500">{'// Для тестування - mock'}</div>
               <div className="ml-8">Database testDb = <span className="text-blue-600">new</span> MockDatabase();</div>
               <div className="ml-8">UserService testService = <span className="text-blue-600">new</span> UserService(testDb);</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Для розробки - Mongo</div>
+              <div className="ml-8 text-gray-500">{'// Для розробки - Mongo'}</div>
               <div className="ml-8">Database devDb = <span className="text-blue-600">new</span> MongoDatabase();</div>
               <div className="ml-8">UserService devService = <span className="text-blue-600">new</span> UserService(devDb);</div>
               <div className="ml-4">{'}'}</div>
@@ -391,7 +391,7 @@ const Part6 = () => {
               <div><span className="text-blue-600">class</span> NotificationManager {'{'}</div>
               <div className="ml-4"><span className="text-blue-600">private</span> NotificationService notificationService;</div>
               <div className="ml-4"></div>
-              <div className="ml-4 text-gray-500">// Dependency Injection через конструктор</div>
+              <div className="ml-4 text-gray-500">{'// Dependency Injection через конструктор'}</div>
               <div className="ml-4"><span className="text-blue-600">public</span> NotificationManager(NotificationService service) {'{'}</div>
               <div className="ml-8">this.notificationService = service;</div>
               <div className="ml-4">{'}'}</div>
@@ -410,12 +410,12 @@ const Part6 = () => {
             <div className="font-mono text-sm">
               <div><span className="text-blue-600">public class</span> Main {'{'}</div>
               <div className="ml-4"><span className="text-blue-600">public static void</span> main(String[] args) {'{'}</div>
-              <div className="ml-8 text-gray-500">// Створюємо різні сервіси</div>
+              <div className="ml-8 text-gray-500">{'// Створюємо різні сервіси'}</div>
               <div className="ml-8">NotificationService email = <span className="text-blue-600">new</span> EmailNotification();</div>
               <div className="ml-8">NotificationService sms = <span className="text-blue-600">new</span> SMSNotification();</div>
               <div className="ml-8">NotificationService push = <span className="text-blue-600">new</span> PushNotification();</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Використовуємо один клас з різними реалізаціями!</div>
+              <div className="ml-8 text-gray-500">{'// Використовуємо один клас з різними реалізаціями!'}</div>
               <div className="ml-8">NotificationManager manager1 = <span className="text-blue-600">new</span> NotificationManager(email);</div>
               <div className="ml-8">manager1.notifyUser("Привіт!", "user@email.com");</div>
               <div className="ml-8"></div>

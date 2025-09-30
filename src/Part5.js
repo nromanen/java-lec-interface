@@ -93,15 +93,15 @@ const Part5 = () => {
               <div className="ml-8">this.age = age;</div>
               <div className="ml-4">{'}'}</div>
               <div className="ml-4"></div>
-              <div className="ml-4 text-gray-500">// Порівнюємо за віком</div>
+              <div className="ml-4 text-gray-500">{'// Порівнюємо за віком'}</div>
               <div className="ml-4">@Override</div>
               <div className="ml-4"><span className="text-blue-600">public int</span> compareTo(Student other) {'{'}</div>
               <div className="ml-8"><span className="text-blue-600">return</span> this.age - other.age;</div>
               <div className="ml-4">{'}'}</div>
               <div>{'}'}</div>
-              <div className="mt-3 text-gray-500">// Використання:</div>
+              <div className="mt-3 text-gray-500">{'// Використання:'}</div>
               <div>List&lt;Student&gt; students = <span className="text-blue-600">new</span> ArrayList&lt;&gt;();</div>
-              <div>Collections.sort(students); <span className="text-gray-500">// Автоматичне сортування!</span></div>
+              <div>Collections.sort(students); <span className="text-gray-500">{'// Автоматичне сортування!'}</span></div>
             </div>
           </div>
 
@@ -158,26 +158,26 @@ const Part5 = () => {
             <h4 className="font-bold text-gray-700 mb-3">💻 Приклад: Різні способи сортування студентів</h4>
             <div className="font-mono text-sm space-y-3">
               <div>
-                <div className="text-gray-500">// За ім'ям</div>
+                <div className="text-gray-500">{'// За іменем'}</div>
                 <div>Comparator&lt;Student&gt; byName = (s1, s2) -&gt;</div>
                 <div className="ml-4">s1.name.compareTo(s2.name);</div>
               </div>
 
               <div className="border-t pt-3">
-                <div className="text-gray-500">// За віком (спадання)</div>
+                <div className="text-gray-500">{'// За віком (спадання)'}</div>
                 <div>Comparator&lt;Student&gt; byAgeDesc = (s1, s2) -&gt;</div>
                 <div className="ml-4">s2.age - s1.age;</div>
               </div>
 
               <div className="border-t pt-3">
-                <div className="text-gray-500">// Комбіноване: спочатку за віком, потім за ім'ям</div>
+                <div className="text-gray-500">{'// Комбіноване: спочатку за віком, потім за ім\'ям'}</div>
                 <div>Comparator&lt;Student&gt; combined =</div>
                 <div className="ml-4">Comparator.comparingInt((Student s) -&gt; s.age)</div>
                 <div className="ml-14">.thenComparing(s -&gt; s.name);</div>
               </div>
 
               <div className="border-t pt-3">
-                <div className="text-gray-500">// Використання:</div>
+                <div className="text-gray-500">{'// Використання:'}</div>
                 <div>students.sort(byName);</div>
                 <div>students.sort(byAgeDesc);</div>
                 <div>students.sort(combined);</div>
@@ -278,13 +278,13 @@ const Part5 = () => {
               <div className="ml-4">String name;</div>
               <div className="ml-4"><span className="text-blue-600">int</span> age;</div>
               <div className="ml-4"></div>
-              <div className="ml-4 text-gray-500">// Природне сортування за віком</div>
+              <div className="ml-4 text-gray-500">{'// Природне сортування за віком'}</div>
               <div className="ml-4">@Override</div>
               <div className="ml-4"><span className="text-blue-600">public int</span> compareTo(Person other) {'{'}</div>
               <div className="ml-8"><span className="text-blue-600">return</span> Integer.compare(this.age, other.age);</div>
               <div className="ml-4">{'}'}</div>
               <div>{'}'}</div>
-              <div className="mt-3 text-gray-500">// Альтернативне сортування за ім'ям</div>
+              <div className="mt-3 text-gray-500">{'// Альтернативне сортування за ім\'ям'}</div>
               <div>Comparator&lt;Person&gt; byName = Comparator.comparing(p -&gt; p.name);</div>
             </div>
           </div>
@@ -398,7 +398,7 @@ const Part5 = () => {
                 <div className="text-green-700 font-bold mb-2">✅ Добре - використання інтерфейсу:</div>
                 <div>List&lt;String&gt; names = <span className="text-blue-600">new</span> ArrayList&lt;&gt;();</div>
                 <div>names.add("Іван");</div>
-                <div className="mt-2 text-gray-500">// Легко замінити на іншу реалізацію:</div>
+                <div className="mt-2 text-gray-500">{'// Легко замінити на іншу реалізацію:'}</div>
                 <div>List&lt;String&gt; names = <span className="text-blue-600">new</span> LinkedList&lt;&gt;();</div>
               </div>
             </div>
@@ -409,23 +409,23 @@ const Part5 = () => {
             <div className="font-mono text-sm">
               <div><span className="text-blue-600">public class</span> ListExample {'{'}</div>
               <div className="ml-4"><span className="text-blue-600">public static void</span> main(String[] args) {'{'}</div>
-              <div className="ml-8 text-gray-500">// Створення списку</div>
+              <div className="ml-8 text-gray-500">{'// Створення списку'}</div>
               <div className="ml-8">List&lt;String&gt; fruits = <span className="text-blue-600">new</span> ArrayList&lt;&gt;();</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Додавання елементів</div>
+              <div className="ml-8 text-gray-500">{'// Додавання елементів'}</div>
               <div className="ml-8">fruits.add("Яблуко");</div>
               <div className="ml-8">fruits.add("Банан");</div>
               <div className="ml-8">fruits.add("Апельсин");</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Отримання елемента</div>
+              <div className="ml-8 text-gray-500">{'// Отримання елемента'}</div>
               <div className="ml-8">String first = fruits.get(0);</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Перебір елементів</div>
+              <div className="ml-8 text-gray-500">{'// Перебір елементів'}</div>
               <div className="ml-8"><span className="text-blue-600">for</span> (String fruit : fruits) {'{'}</div>
               <div className="ml-12">System.out.println(fruit);</div>
               <div className="ml-8">{'}'}</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Або з lambda</div>
+              <div className="ml-8 text-gray-500">{'// Або з lambda'}</div>
               <div className="ml-8">fruits.forEach(fruit -&gt; System.out.println(fruit));</div>
               <div className="ml-4">{'}'}</div>
               <div>{'}'}</div>
@@ -485,7 +485,7 @@ const Part5 = () => {
                 <div className="ml-4">@Override</div>
                 <div className="ml-4"><span className="text-blue-600">public void</span> processPayment(<span className="text-blue-600">double</span> amount) {'{'}</div>
                 <div className="ml-8">System.out.println("Оплата " + amount + " грн карткою");</div>
-                <div className="ml-8 text-gray-500">// Логіка обробки картки</div>
+                <div className="ml-8 text-gray-500">{'// Логіка обробки картки'}</div>
                 <div className="ml-4">{'}'}</div>
                 <div className="ml-4"></div>
                 <div className="ml-4">@Override</div>
@@ -539,7 +539,7 @@ const Part5 = () => {
             <div className="font-mono text-sm">
               <div><span className="text-blue-600">class</span> PaymentProcessor {'{'}</div>
               <div className="ml-4"></div>
-              <div className="ml-4 text-gray-500">// Метод приймає будь-який PaymentMethod</div>
+              <div className="ml-4 text-gray-500">{'// Метод приймає будь-який PaymentMethod'}</div>
               <div className="ml-4"><span className="text-blue-600">public void</span> makePayment(PaymentMethod method, <span className="text-blue-600">double</span> amount) {'{'}</div>
               <div className="ml-8"><span className="text-blue-600">if</span> (method.isAvailable()) {'{'}</div>
               <div className="ml-12">System.out.println("Обробка оплати через: " +</div>
@@ -560,12 +560,12 @@ const Part5 = () => {
               <div className="ml-4"><span className="text-blue-600">public static void</span> main(String[] args) {'{'}</div>
               <div className="ml-8">PaymentProcessor processor = <span className="text-blue-600">new</span> PaymentProcessor();</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Різні способи оплати</div>
+              <div className="ml-8 text-gray-500">{'// Різні способи оплати'}</div>
               <div className="ml-8">PaymentMethod card = <span className="text-blue-600">new</span> CreditCardPayment();</div>
               <div className="ml-8">PaymentMethod paypal = <span className="text-blue-600">new</span> PayPalPayment();</div>
               <div className="ml-8">PaymentMethod crypto = <span className="text-blue-600">new</span> CryptoPayment();</div>
               <div className="ml-8"></div>
-              <div className="ml-8 text-gray-500">// Використовуємо той самий метод для всіх!</div>
+              <div className="ml-8 text-gray-500">{'// Використовуємо той самий метод для всіх!'}</div>
               <div className="ml-8">processor.makePayment(card, 1000);</div>
               <div className="ml-8">processor.makePayment(paypal, 500);</div>
               <div className="ml-8">processor.makePayment(crypto, 2000);</div>

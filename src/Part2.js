@@ -27,7 +27,7 @@ const Part2 = () => {
 
         <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
           <div className="font-mono text-sm">
-            <div className="text-gray-500">// Простий інтерфейс</div>
+            <div className="text-gray-500">{'// Простий інтерфейс'}</div>
             <div><span className="text-blue-600">public interface</span> <span className="text-purple-600">Drawable</span> {'{'}</div>
             <div className="ml-4 text-gray-700">void draw();</div>
             <div>{'}'}</div>
@@ -54,7 +54,7 @@ const Part2 = () => {
 
         <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
           <div className="font-mono text-sm">
-            <div className="text-gray-500">// Інтерфейс з кількома методами</div>
+            <div className="text-gray-500">{'// Інтерфейс з кількома методами'}</div>
             <div><span className="text-blue-600">public interface</span> <span className="text-purple-600">Vehicle</span> {'{'}</div>
             <div className="ml-4 text-gray-700">void start();</div>
             <div className="ml-4 text-gray-700">void stop();</div>
@@ -77,7 +77,7 @@ const Part2 = () => {
       <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
         <div className="font-mono text-sm">
           <div><span className="text-blue-600">interface</span> <span className="text-purple-600">MathConstants</span> {'{'}</div>
-          <div className="ml-4 text-gray-700">double PI = 3.14159; <span className="text-gray-500">// автоматично public static final</span></div>
+          <div className="ml-4 text-gray-700">double PI = 3.14159; <span className="text-gray-500">{'// автоматично public static final'}</span></div>
           <div className="ml-4 text-gray-700">int MAX_VALUE = 100;</div>
           <div>{'}'}</div>
         </div>
@@ -115,8 +115,8 @@ const Part2 = () => {
           <p className="font-semibold text-red-700 mb-2">❌ Помилка:</p>
           <div className="font-mono text-xs bg-white p-2 rounded">
             <div className="text-red-600">MathConstants.PI = 3.14;</div>
-            <div className="text-gray-500 text-xs mt-1">// Помилка компіляції!</div>
-            <div className="text-gray-500 text-xs">// Не можна змінювати final</div>
+            <div className="text-gray-500 text-xs mt-1">{'// Помилка компіляції!'}</div>
+            <div className="text-gray-500 text-xs">{'// Не можна змінювати final'}</div>
           </div>
         </div>
       </div>
@@ -183,7 +183,7 @@ const Part2 = () => {
         <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
           <div className="font-mono text-sm space-y-4">
             <div>
-              <div className="text-gray-500">// Оголошення інтерфейсу</div>
+              <div className="text-gray-500">{'// Оголошення інтерфейсу'}</div>
               <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Flyable</span> {'{'}</div>
               <div className="ml-4 text-gray-700">void fly();</div>
               <div className="ml-4 text-gray-700">int getAltitude();</div>
@@ -191,7 +191,7 @@ const Part2 = () => {
             </div>
             
             <div className="border-t pt-4">
-              <div className="text-gray-500">// Реалізація інтерфейсу</div>
+              <div className="text-gray-500">{'// Реалізація інтерфейсу'}</div>
               <div><span className="text-blue-600">class</span> <span className="text-purple-600">Bird</span> <span className="text-blue-600">implements</span> Flyable {'{'}</div>
               <div className="ml-4 text-gray-700">@Override</div>
               <div className="ml-4"><span className="text-blue-600">public void</span> fly() {'{'}</div>
@@ -231,7 +231,7 @@ const Part2 = () => {
             <div className="mt-2"><span className="text-blue-600">interface</span> <span className="text-purple-600">Flyable</span> {'{'}</div>
             <div className="ml-4 text-gray-700">void fly();</div>
             <div>{'}'}</div>
-            <div className="mt-4 text-gray-500">// Качка може і плавати, і літати!</div>
+            <div className="mt-4 text-gray-500">{'// Качка може і плавати, і літати!'}</div>
             <div><span className="text-blue-600">class</span> <span className="text-purple-600">Duck</span> <span className="text-blue-600">implements</span> Swimmable, Flyable {'{'}</div>
             <div className="ml-4 text-gray-700">@Override</div>
             <div className="ml-4"><span className="text-blue-600">public void</span> swim() {'{'}</div>

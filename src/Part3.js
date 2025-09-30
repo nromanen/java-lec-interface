@@ -51,8 +51,8 @@ const Part3 = () => {
           <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
             <div className="font-mono text-sm">
               <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Printable</span> {'{'}</div>
-              <div className="ml-4 text-gray-700">void print(); <span className="text-gray-500">// абстрактний метод</span></div>
-              <div className="ml-4 text-gray-700">String getContent(); <span className="text-gray-500">// абстрактний метод</span></div>
+              <div className="ml-4 text-gray-700">void print(); <span className="text-gray-500">{'// абстрактний метод'}</span></div>
+              <div className="ml-4 text-gray-700">String getContent(); <span className="text-gray-500">{'// абстрактний метод'}</span></div>
               <div>{'}'}</div>
             </div>
           </div>
@@ -75,7 +75,7 @@ const Part3 = () => {
                 <div className="ml-2"><span className="text-blue-600">implements</span> Printable {'{'}</div>
                 <div className="ml-4 text-gray-600">@Override</div>
                 <div className="ml-4"><span className="text-blue-600">public void</span> print() {'{'}</div>
-                <div className="ml-6 text-gray-500">// реалізація</div>
+                <div className="ml-6 text-gray-500">{'// реалізація'}</div>
                 <div className="ml-4">{'}'}</div>
                 <div className="ml-2">{'}'}</div>
               </div>
@@ -102,9 +102,9 @@ const Part3 = () => {
           <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
             <div className="font-mono text-sm">
               <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Vehicle</span> {'{'}</div>
-              <div className="ml-4 text-gray-700">void start(); <span className="text-gray-500">// абстрактний</span></div>
+              <div className="ml-4 text-gray-700">void start(); <span className="text-gray-500">{'// абстрактний'}</span></div>
               <div className="ml-4"></div>
-              <div className="ml-4 text-gray-500">// Default метод з реалізацією</div>
+              <div className="ml-4 text-gray-500">{'// Default метод з реалізацією'}</div>
               <div className="ml-4"><span className="text-green-600">default</span> <span className="text-blue-600">void</span> horn() {'{'}</div>
               <div className="ml-8 text-gray-600">System.out.println("Біп-біп!");</div>
               <div className="ml-4">{'}'}</div>
@@ -136,7 +136,7 @@ const Part3 = () => {
               <div className="font-mono text-xs bg-blue-50 p-2 rounded">
                 <div><span className="text-blue-600">class</span> Car <span className="text-blue-600">implements</span> Vehicle {'{'}</div>
                 <div className="ml-2"><span className="text-blue-600">public void</span> start() {'{ }'}</div>
-                <div className="ml-2 text-gray-500">// horn() вже є!</div>
+                <div className="ml-2 text-gray-500">{'// horn() вже є!'}</div>
                 <div>{'}'}</div>
               </div>
             </div>
@@ -148,7 +148,7 @@ const Part3 = () => {
                 <div className="ml-2"><span className="text-blue-600">public void</span> start() {'{ }'}</div>
                 <div className="ml-2">@Override</div>
                 <div className="ml-2"><span className="text-blue-600">public void</span> horn() {'{'}</div>
-                <div className="ml-4 text-gray-600">// своя реалізація</div>
+                <div className="ml-4 text-gray-600">{'// своя реалізація'}</div>
                 <div className="ml-2">{'}'}</div>
                 <div>{'}'}</div>
               </div>
@@ -169,7 +169,7 @@ const Part3 = () => {
           <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
             <div className="font-mono text-sm">
               <div><span className="text-blue-600">interface</span> <span className="text-purple-600">TimeUtils</span> {'{'}</div>
-              <div className="ml-4 text-gray-500">// Static метод</div>
+              <div className="ml-4 text-gray-500">{'// Static метод'}</div>
               <div className="ml-4"><span className="text-purple-600">static</span> <span className="text-blue-600">long</span> getCurrentTime() {'{'}</div>
               <div className="ml-8"><span className="text-blue-600">return</span> System.currentTimeMillis();</div>
               <div className="ml-4">{'}'}</div>
@@ -206,17 +206,17 @@ const Part3 = () => {
           <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
             <p className="font-semibold text-gray-700 mb-2">💡 Приклад використання:</p>
             <div className="font-mono text-sm bg-gray-50 p-3 rounded">
-              <div className="text-gray-500">// Виклик через інтерфейс</div>
+              <div className="text-gray-500">{'// Виклик через інтерфейс'}</div>
               <div><span className="text-blue-600">long</span> time = TimeUtils.getCurrentTime();</div>
               <div>TimeUtils.printTime();</div>
-              <div className="mt-2 text-red-600">// ❌ НЕ можна через об'єкт класу</div>
-              <div className="text-gray-400">// myObject.getCurrentTime(); // Помилка!</div>
+              <div className="mt-2 text-red-600">{'// ❌ НЕ можна через об\'єкт класу'}</div>
+              <div className="text-gray-400">{'// myObject.getCurrentTime(); // Помилка!'}</div>
             </div>
           </div>
 
           <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
             <h4 className="font-bold text-blue-700 mb-2">📌 Коли використовувати?</h4>
-            <p className="text-gray-700">Для helper-методів, які логічно пов'язані з інтерфейсом, але не потребують стану об'єкта</p>
+            <p className="text-gray-700">Для helper-методів, які логічно пов\'язані з інтерфейсом, але не потребують стану об'єкта</p>
           </div>
         </div>
       )
@@ -234,7 +234,7 @@ const Part3 = () => {
             <div className="font-mono text-sm">
               <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Logger</span> {'{'}</div>
               <div className="ml-4"></div>
-              <div className="ml-4 text-gray-500">// Default метод використовує private</div>
+              <div className="ml-4 text-gray-500">{'// Default метод використовує private'}</div>
               <div className="ml-4"><span className="text-green-600">default</span> <span className="text-blue-600">void</span> logInfo(String msg) {'{'}</div>
               <div className="ml-8">log("INFO", msg);</div>
               <div className="ml-4">{'}'}</div>
@@ -243,7 +243,7 @@ const Part3 = () => {
               <div className="ml-8">log("ERROR", msg);</div>
               <div className="ml-4">{'}'}</div>
               <div className="ml-4"></div>
-              <div className="ml-4 text-gray-500">// Private метод - тільки всередині інтерфейсу</div>
+              <div className="ml-4 text-gray-500">{'// Private метод - тільки всередині інтерфейсу'}</div>
               <div className="ml-4"><span className="text-orange-600">private</span> <span className="text-blue-600">void</span> log(String level, String msg) {'{'}</div>
               <div className="ml-8 text-gray-600">System.out.println("[" + level + "] " + msg);</div>
               <div className="ml-4">{'}'}</div>
@@ -343,7 +343,7 @@ const Part3 = () => {
             
             <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
               <h4 className="font-bold text-purple-700 mb-2">📌 Static методи:</h4>
-              <p className="text-gray-700 text-sm">Utility функції, пов'язані з інтерфейсом</p>
+              <p className="text-gray-700 text-sm">Utility функції, пов\'язані з інтерфейсом</p>
             </div>
             
             <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-400">

@@ -116,7 +116,7 @@ const Part4 = () => {
               <p className="text-gray-700 mb-3">Клас може мати кілька "ролей" або "здібностей"</p>
               <div className="bg-white p-3 rounded font-mono text-sm">
                 <div><span className="text-blue-600">class</span> Duck <span className="text-blue-600">implements</span> Flyable, Swimmable {'{'}</div>
-                <div className="ml-4 text-gray-500">// Качка може і літати, і плавати</div>
+                <div className="ml-4 text-gray-500">{'// Качка може і літати, і плавати'}</div>
                 <div>{'}'}</div>
               </div>
             </div>
@@ -133,9 +133,9 @@ const Part4 = () => {
 
             <div className="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
               <h4 className="font-bold text-purple-700 mb-2">3️⃣ Різні класи мають спільну функціональність</h4>
-              <p className="text-gray-700 mb-3">Але не пов'язані ієрархією успадкування</p>
+              <p className="text-gray-700 mb-3">Але не пов\'язані ієрархією успадкування</p>
               <div className="bg-white p-3 rounded font-mono text-sm">
-                <div className="text-gray-500">// Car і Bird не пов'язані, але обидва можуть рухатись</div>
+                <div className="text-gray-500">{'// Car і Bird не пов\'язані, але обидва можуть рухатись'}</div>
                 <div><span className="text-blue-600">interface</span> Movable {'{'} void move(); {'}'}</div>
               </div>
             </div>
@@ -170,7 +170,7 @@ const Part4 = () => {
                 <div className="ml-4 text-gray-700">String name;</div>
                 <div className="ml-4"></div>
                 <div className="ml-4 text-gray-700">void eat() {'{'}</div>
-                <div className="ml-8 text-gray-500">// спільна реалізація для всіх тварин</div>
+                <div className="ml-8 text-gray-500">{'// спільна реалізація для всіх тварин'}</div>
                 <div className="ml-4">{'}'}</div>
                 <div className="ml-4"></div>
                 <div className="ml-4"><span className="text-purple-600">abstract</span> void makeSound();</div>
@@ -230,10 +230,10 @@ const Part4 = () => {
             <div className="bg-red-50 p-5 rounded-lg border-2 border-red-400">
               <h4 className="font-bold text-red-700 mb-3 text-center">❌ НЕ можна</h4>
               <div className="bg-white p-3 rounded font-mono text-sm">
-                <div className="text-red-600">// Помилка компіляції!</div>
+                <div className="text-red-600">{'// Помилка компіляції!'}</div>
                 <div><span className="text-blue-600">class</span> C</div>
                 <div className="ml-2"><span className="text-blue-600">extends</span> A, B {'{'}</div>
-                <div className="ml-4 text-gray-500">// ❌ Неможливо</div>
+                <div className="ml-4 text-gray-500">{'// ❌ Неможливо'}</div>
                 <div>{'}'}</div>
               </div>
               <p className="text-gray-700 text-sm mt-3 text-center">Множинне успадкування класів заборонене</p>
@@ -242,10 +242,10 @@ const Part4 = () => {
             <div className="bg-green-50 p-5 rounded-lg border-2 border-green-400">
               <h4 className="font-bold text-green-700 mb-3 text-center">✅ Можна</h4>
               <div className="bg-white p-3 rounded font-mono text-sm">
-                <div className="text-green-600">// Працює відмінно!</div>
+                <div className="text-green-600">{'// Працює відмінно!'}</div>
                 <div><span className="text-blue-600">class</span> C</div>
                 <div className="ml-2"><span className="text-blue-600">implements</span> I1, I2, I3 {'{'}</div>
-                <div className="ml-4 text-gray-500">// ✅ OK!</div>
+                <div className="ml-4 text-gray-500">{'// ✅ OK!'}</div>
                 <div>{'}'}</div>
               </div>
               <p className="text-gray-700 text-sm mt-3 text-center">Множинна реалізація інтерфейсів дозволена</p>
@@ -258,7 +258,7 @@ const Part4 = () => {
               <div><span className="text-blue-600">interface</span> Flyable {'{'} void fly(); {'}'}</div>
               <div><span className="text-blue-600">interface</span> Swimmable {'{'} void swim(); {'}'}</div>
               <div><span className="text-blue-600">interface</span> Walkable {'{'} void walk(); {'}'}</div>
-              <div className="mt-3 text-gray-500">// Качка може літати, плавати та ходити!</div>
+              <div className="mt-3 text-gray-500">{'// Качка може літати, плавати та ходити!'}</div>
               <div><span className="text-blue-600">class</span> Duck <span className="text-blue-600">implements</span> Flyable, Swimmable, Walkable {'{'}</div>
               <div className="ml-4 text-gray-700">@Override <span className="text-blue-600">public void</span> fly() {'{ ... }'}</div>
               <div className="ml-4 text-gray-700">@Override <span className="text-blue-600">public void</span> swim() {'{ ... }'}</div>
@@ -286,17 +286,17 @@ const Part4 = () => {
 
           <div className="bg-white p-6 rounded-lg shadow border border-gray-200">
             <div className="font-mono text-sm">
-              <div className="text-gray-500">// Абстрактний клас</div>
+              <div className="text-gray-500">{'// Абстрактний клас'}</div>
               <div><span className="text-blue-600">abstract class</span> Animal {'{'}</div>
               <div className="ml-4">String name;</div>
               <div className="ml-4"><span className="text-blue-600">void</span> eat() {'{ ... }'}</div>
               <div>{'}'}</div>
               
-              <div className="mt-4 text-gray-500">// Інтерфейси</div>
+              <div className="mt-4 text-gray-500">{'// Інтерфейси'}</div>
               <div><span className="text-blue-600">interface</span> Flyable {'{'} void fly(); {'}'}</div>
               <div><span className="text-blue-600">interface</span> Swimmable {'{'} void swim(); {'}'}</div>
               
-              <div className="mt-4 text-gray-500">// Птах успадковує Animal і реалізує Flyable</div>
+              <div className="mt-4 text-gray-500">{'// Птах успадковує Animal і реалізує Flyable'}</div>
               <div className="bg-green-50 p-2 rounded">
                 <div><span className="text-blue-600">class</span> Bird</div>
                 <div className="ml-4"><span className="text-orange-600">extends</span> Animal</div>
@@ -305,7 +305,7 @@ const Part4 = () => {
                 <div className="ml-4">{'}'}</div>
               </div>
               
-              <div className="mt-4 text-gray-500">// Качка успадковує Bird і додає Swimmable</div>
+              <div className="mt-4 text-gray-500">{'// Качка успадковує Bird і додає Swimmable'}</div>
               <div className="bg-blue-50 p-2 rounded">
                 <div><span className="text-blue-600">class</span> Duck</div>
                 <div className="ml-4"><span className="text-orange-600">extends</span> Bird</div>
