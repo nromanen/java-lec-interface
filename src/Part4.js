@@ -133,7 +133,7 @@ const Part4 = () => {
 
             <div className="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
               <h4 className="font-bold text-purple-700 mb-2">3️⃣ Різні класи мають спільну функціональність</h4>
-              <p className="text-gray-700 mb-3">Але не пов\'язані ієрархією успадкування</p>
+              <p className="text-gray-700 mb-3">Але не пов'язані ієрархією успадкування</p>
               <div className="bg-white p-3 rounded font-mono text-sm">
                 <div className="text-gray-500">{'// Car і Bird не пов\'язані, але обидва можуть рухатись'}</div>
                 <div><span className="text-blue-600">interface</span> Movable {'{'} void move(); {'}'}</div>

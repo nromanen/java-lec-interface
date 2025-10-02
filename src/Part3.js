@@ -216,7 +216,7 @@ const Part3 = () => {
 
           <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
             <h4 className="font-bold text-blue-700 mb-2">📌 Коли використовувати?</h4>
-            <p className="text-gray-700">Для helper-методів, які логічно пов\'язані з інтерфейсом, але не потребують стану об'єкта</p>
+            <p className="text-gray-700">Для helper-методів, які логічно пов'язані з інтерфейсом, але не потребують стану об'єкта</p>
           </div>
         </div>
       )
@@ -343,7 +343,7 @@ const Part3 = () => {
             
             <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
               <h4 className="font-bold text-purple-700 mb-2">📌 Static методи:</h4>
-              <p className="text-gray-700 text-sm">Utility функції, пов\'язані з інтерфейсом</p>
+              <p className="text-gray-700 text-sm">Utility функції, пов'язані з інтерфейсом</p>
             </div>
             
             <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-400">
