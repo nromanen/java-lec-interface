@@ -450,7 +450,7 @@ const Part6 = () => {
         </div>
       )
     },
-    {
+        {
       title: "Підсумки та Best Practices",
       content: (
         <div className="space-y-6">
@@ -458,83 +458,83 @@ const Part6 = () => {
             <h3 className="text-2xl font-bold">🎓 Ключові висновки</h3>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="bg-green-50 p-5 rounded-lg border-l-4 border-green-500">
-                <h4 className="font-bold text-green-700 mb-3">✅ Завжди робіть:</h4>
-                <ul className="text-gray-700 space-y-2 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600">•</span>
-                    <span>Програмуйте до інтерфейсу, а не до реалізації</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600">•</span>
-                    <span>Використовуйте DI для передачі залежностей</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600">•</span>
-                    <span>Створюйте невеликі, сфокусовані інтерфейси</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600">•</span>
-                    <span>Документуйте контракт інтерфейсу</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-green-600">•</span>
-                    <span>Використовуйте поліморфізм для гнучкості</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
-                <h4 className="font-bold text-blue-700 mb-3">💡 Коли використовувати:</h4>
-                <ul className="text-gray-700 space-y-2 text-sm">
-                  <li>• Різні реалізації одного контракту</li>
-                  <li>• Потрібна можливість заміни реалізації</li>
-                  <li>• Написання тестів (mock-об'єкти)</li>
-                  <li>• Слабке зв'язування компонентів</li>
-                  <li>• Розширення функціональності</li>
-                </ul>
-              </div>
+          <div className="grid grid-cols-3 gap-6">
+            <div className="bg-green-50 p-5 rounded-lg border-l-4 border-green-500">
+              <h4 className="font-bold text-green-700 mb-3">✅ Завжди робіть:</h4>
+              <ul className="text-gray-700 space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span>Програмуйте до інтерфейсу, а не до реалізації</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span>Використовуйте DI для передачі залежностей</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span>Створюйте невеликі, сфокусовані інтерфейси</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span>Документуйте контракт інтерфейсу</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span>Використовуйте поліморфізм для гнучкості</span>
+                </li>
+              </ul>
             </div>
 
-            <div className="space-y-4">
-              <div className="bg-red-50 p-5 rounded-lg border-l-4 border-red-500">
-                <h4 className="font-bold text-red-700 mb-3">❌ Уникайте:</h4>
-                <ul className="text-gray-700 space-y-2 text-sm">
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-600">•</span>
-                    <span>Жорсткої прив'язки до конкретних класів</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-600">•</span>
-                    <span>Створення залежностей всередині класу</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-600">•</span>
-                    <span>Занадто великих інтерфейсів</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-600">•</span>
-                    <span>Порушення контракту інтерфейсу</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-red-600">•</span>
-                    <span>Використання конкретних типів в сигнатурах</span>
-                  </li>
-                </ul>
-              </div>
+            <div className="bg-red-50 p-5 rounded-lg border-l-4 border-red-500">
+              <h4 className="font-bold text-red-700 mb-3">❌ Уникайте:</h4>
+              <ul className="text-gray-700 space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600">•</span>
+                  <span>Жорсткої прив'язки до конкретних класів</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600">•</span>
+                  <span>Створення залежностей всередині класу</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600">•</span>
+                  <span>Занадто великих інтерфейсів</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600">•</span>
+                  <span>Порушення контракту інтерфейсу</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600">•</span>
+                  <span>Використання конкретних типів в сигнатурах</span>
+                </li>
+              </ul>
+            </div>
 
-              <div className="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
-                <h4 className="font-bold text-purple-700 mb-3">🎯 SOLID принципи:</h4>
-                <ul className="text-gray-700 space-y-2 text-sm">
-                  <li><strong>D</strong>ependency Inversion</li>
-                  <li><strong>I</strong>nterface Segregation</li>
-                  <li><strong>L</strong>iskov Substitution</li>
-                  <li><strong>O</strong>pen/Closed</li>
-                  <li><strong>S</strong>ingle Responsibility</li>
-                </ul>
-              </div>
+            <div className="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+              <h4 className="font-bold text-blue-700 mb-3">💡 Коли використовувати:</h4>
+              <ul className="text-gray-700 space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span>Різні реалізації одного контракту</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span>Потрібна можливість заміни реалізації</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span>Написання тестів (mock-об'єкти)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span>Слабке зв'язування компонентів</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span>Розширення функціональності</span>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -557,82 +557,6 @@ const Part6 = () => {
                 <p className="text-sm text-gray-600">Залежності ззовні</p>
               </div>
             </div>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: "Дякую за увагу! 🎉",
-      content: (
-        <div className="space-y-8">
-          <div className="text-center">
-            <div className="text-8xl mb-6">🎓</div>
-            <h2 className="text-5xl font-bold text-purple-600 mb-4">Вітаю!</h2>
-            <p className="text-2xl text-gray-600">Ви завершили курс по інтерфейсах в Java</p>
-          </div>
-
-          <div className="grid grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-blue-500 to-cyan-600 text-white p-6 rounded-lg text-center">
-              <div className="text-5xl mb-3">📚</div>
-              <h3 className="text-xl font-bold mb-2">6 розділів</h3>
-              <p>Від основ до практики</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-500 to-emerald-600 text-white p-6 rounded-lg text-center">
-              <div className="text-5xl mb-3">💡</div>
-              <h3 className="text-xl font-bold mb-2">Ключові концепції</h3>
-              <p>Поліморфізм, DI, Best Practices</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-500 to-pink-600 text-white p-6 rounded-lg text-center">
-              <div className="text-5xl mb-3">🚀</div>
-              <h3 className="text-xl font-bold mb-2">Готові до практики</h3>
-              <p>Застосовуйте знання в проектах</p>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-8 rounded-lg border-2 border-orange-300">
-            <h3 className="text-2xl font-bold text-orange-700 mb-4 text-center">📝 Що ви вивчили:</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-bold text-purple-600 mb-2">1. Основи інтерфейсів</h4>
-                <p className="text-sm text-gray-600">Визначення, призначення, контракти</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-bold text-blue-600 mb-2">2. Синтаксис</h4>
-                <p className="text-sm text-gray-600">Оголошення, реалізація, множинність</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-bold text-green-600 mb-2">3. Типи методів</h4>
-                <p className="text-sm text-gray-600">Abstract, default, static, private</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-bold text-orange-600 mb-2">4. vs Абстрактні класи</h4>
-                <p className="text-sm text-gray-600">Відмінності та застосування</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-bold text-red-600 mb-2">5. Реальні приклади</h4>
-                <p className="text-sm text-gray-600">Comparable, Collections, власні інтерфейси</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-bold text-pink-600 mb-2">6. Поліморфізм і DI</h4>
-                <p className="text-sm text-gray-600">Гнучкість та професійний підхід</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-lg text-center">
-            <h3 className="text-3xl font-bold mb-4">🎯 Наступні кроки:</h3>
-            <div className="space-y-2 text-lg">
-              <p>✅ Практикуйте створення власних інтерфейсів</p>
-              <p>✅ Вивчайте Design Patterns (Strategy, Factory, Observer)</p>
-              <p>✅ Досліджуйте Spring Framework та його DI</p>
-              <p>✅ Пишіть чистий, підтримуваний код</p>
-            </div>
-          </div>
-
-          <div className="text-center text-2xl font-bold text-gray-600">
-            Успіхів у вивченні Java! 🚀
           </div>
         </div>
       )
