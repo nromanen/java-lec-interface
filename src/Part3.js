@@ -190,17 +190,42 @@ const Part3 = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-600 font-bold">•</span>
-                <span>НЕ можуть бути перевизначені в класах-реалізаціях</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-purple-600 font-bold">•</span>
-                <span>НЕ успадковуються класами</span>
+                <span>НЕ успадковуються класами-реалізаціями — отже, і перевизначити їх неможливо (<code className="bg-purple-200 px-2 py-1 rounded text-sm">@Override</code> дасть помилку)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-600 font-bold">•</span>
                 <span>Ідеально для utility/helper методів</span>
               </li>
             </ul>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-400">
+              <h4 className="font-bold text-amber-700 mb-2">🏛️ static у класі</h4>
+              <p className="text-gray-700 text-sm mb-2">Успадковується — доступний через ім'я нащадка</p>
+              <div className="font-mono text-xs bg-white p-2 rounded">
+                <div>class Child extends Parent {'{ }'}</div>
+                <div className="text-green-600">Child.hello(); ✅</div>
+              </div>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+              <h4 className="font-bold text-purple-700 mb-2">🔌 static в інтерфейсі</h4>
+              <p className="text-gray-700 text-sm mb-2">НЕ успадковується — тільки через ім'я інтерфейсу</p>
+              <div className="font-mono text-xs bg-white p-2 rounded">
+                <div>class New implements TimeUtils {'{ }'}</div>
+                <div className="text-red-600">New.printTime(); ❌</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-500">
+            <p className="text-gray-700 text-sm">
+              <span className="font-bold text-amber-700">⚠️ І навіть у класах static не перевизначається:</span> метод нащадка з тією ж сигнатурою <span className="font-bold">приховує</span> (hiding) батьківський. Який саме викличеться — вирішується на етапі компіляції за типом посилання, а не за реальним об'єктом:
+            </p>
+            <div className="font-mono text-xs bg-white p-2 rounded mt-2">
+              <div>Parent p = <span className="text-blue-600">new</span> Child();</div>
+              <div>p.hello(); <span className="text-gray-500">{'// "Parent", а не "Child" (!)'}</span></div>
+            </div>
           </div>
 
           <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
@@ -211,6 +236,9 @@ const Part3 = () => {
               <div>TimeUtils.printTime();</div>
               <div className="mt-2 text-red-600">{'// ❌ НЕ можна через об\'єкт класу'}</div>
               <div className="text-gray-400">{'// myObject.getCurrentTime(); // Помилка!'}</div>
+              <div className="mt-2 text-gray-500">{'// Власний метод класу — ніяк не пов\'язаний з TimeUtils'}</div>
+              <div className="text-gray-400">{'// class New implements TimeUtils { static void printTime() {...} }'}</div>
+              <div className="text-gray-400">{'// New.printTime() та TimeUtils.printTime() — два різні методи'}</div>
             </div>
           </div>
 
