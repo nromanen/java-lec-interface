@@ -259,13 +259,13 @@ const Part2 = () => {
       </div>
     )
   },
-    {
-    title: "Клас може реалізувати кілька інтерфейсів",
+   {
+    title: "Інтерфейс може успадковувати кілька інтерфейсів",
     content: (
       <div className="space-y-6">
-        <div className="bg-gradient-to-r from-green-500 to-teal-600 text-white p-6 rounded-lg">
-          <h3 className="text-2xl font-bold mb-2">🎯 Множинна реалізація</h3>
-          <p className="text-lg">На відміну від класів, можна реалізувати необмежену кількість інтерфейсів!</p>
+        <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6 rounded-lg">
+          <h3 className="text-2xl font-bold mb-2">🧬 Множинне успадкування</h3>
+          <p className="text-lg">Інтерфейс може розширювати будь-яку кількість інших інтерфейсів — через <code className="bg-white/20 px-1 rounded">extends</code>, а не <code className="bg-white/20 px-1 rounded">implements</code>!</p>
         </div>
 
         <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
@@ -276,31 +276,39 @@ const Part2 = () => {
             <div className="mt-2"><span className="text-blue-600">interface</span> <span className="text-purple-600">Flyable</span> {'{'}</div>
             <div className="ml-4 text-gray-700">void fly();</div>
             <div>{'}'}</div>
-            <div className="mt-4 text-gray-500">{'// Качка може і плавати, і літати!'}</div>
-            <div><span className="text-blue-600">class</span> <span className="text-purple-600">Duck</span> <span className="text-blue-600">implements</span> Swimmable, Flyable {'{'}</div>
+            <div className="mt-4 text-gray-500">{'// Один інтерфейс успадковує одразу два'}</div>
+            <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Amphibious</span> <span className="text-blue-600">extends</span> Swimmable, Flyable {'{'}</div>
+            <div className="ml-4 text-gray-700">void dive();</div>
+            <div>{'}'}</div>
+            <div className="mt-4 text-gray-500">{'// Клас зобов\'язаний реалізувати ВСІ три методи'}</div>
+            <div><span className="text-blue-600">class</span> <span className="text-purple-600">Duck</span> <span className="text-blue-600">implements</span> Amphibious {'{'}</div>
             <div className="ml-4 text-gray-700">@Override</div>
-            <div className="ml-4"><span className="text-blue-600">public void</span> swim() {'{'}</div>
-            <div className="ml-8 text-gray-600">System.out.println("Качка плаває");</div>
-            <div className="ml-4">{'}'}</div>
+            <div className="ml-4"><span className="text-blue-600">public void</span> swim() {'{'} ... {'}'}</div>
             <div className="ml-4 text-gray-700">@Override</div>
-            <div className="ml-4"><span className="text-blue-600">public void</span> fly() {'{'}</div>
-            <div className="ml-8 text-gray-600">System.out.println("Качка літає");</div>
-            <div className="ml-4">{'}'}</div>
+            <div className="ml-4"><span className="text-blue-600">public void</span> fly() {'{'} ... {'}'}</div>
+            <div className="ml-4 text-gray-700">@Override</div>
+            <div className="ml-4"><span className="text-blue-600">public void</span> dive() {'{'} ... {'}'}</div>
             <div>{'}'}</div>
           </div>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
-            <h4 className="font-bold text-green-700 mb-2">✅ Інтерфейси</h4>
-            <p className="text-gray-700 text-sm">Можна реалізувати багато</p>
-            <code className="text-xs bg-white p-2 block mt-2 rounded">implements A, B, C</code>
+          <div className="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-400">
+            <h4 className="font-bold text-indigo-700 mb-2">✅ Інтерфейс</h4>
+            <p className="text-gray-700 text-sm">Успадковує скільки завгодно інтерфейсів</p>
+            <code className="text-xs bg-white p-2 block mt-2 rounded">interface Int1 extends Int2, Int3</code>
           </div>
           <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
-            <h4 className="font-bold text-blue-700 mb-2">⚠️ Класи</h4>
-            <p className="text-gray-700 text-sm">Можна успадкувати тільки один</p>
-            <code className="text-xs bg-white p-2 block mt-2 rounded">extends OnlyOne</code>
+            <h4 className="font-bold text-blue-700 mb-2">⚠️ Клас</h4>
+            <p className="text-gray-700 text-sm">Успадковує лише один клас</p>
+            <code className="text-xs bg-white p-2 block mt-2 rounded">class A extends OnlyOne</code>
           </div>
+        </div>
+
+        <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-400">
+          <p className="text-gray-700 text-sm">
+            <span className="font-bold text-amber-700">💡 Важливо:</span> інтерфейс-нащадок успадковує всі абстрактні методи батьківських інтерфейсів. Клас, який його реалізує, має реалізувати їх усі — і власні, і успадковані.
+          </p>
         </div>
       </div>
     )
