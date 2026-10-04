@@ -163,8 +163,7 @@ const Part2 = () => {
         <div className="bg-yellow-50 p-5 rounded-lg border border-yellow-300">
           <h4 className="font-bold text-yellow-700 mb-2">📌 Важливо:</h4>
           <ul className="text-gray-700 space-y-2">
-            <li>• Методи автоматично є <code className="bg-yellow-200 px-2 py-1 rounded text-sm">public abstract</code></li>
-            <li>• Не потрібно явно писати <code className="bg-yellow-200 px-2 py-1 rounded text-sm">public abstract</code></li>
+            <li>• Методи автоматично є <code className="bg-yellow-200 px-2 py-1 rounded text-sm">public abstract</code> (не потрібно явно писати <code className="bg-yellow-200 px-2 py-1 rounded text-sm">public abstract</code>)</li>
             <li>• Всі методи без тіла є абстрактними</li>
           </ul>
         </div>
@@ -209,7 +208,7 @@ const Part2 = () => {
 
         <div className="bg-red-50 p-5 rounded-lg border-l-4 border-red-400">
           <h4 className="font-bold text-red-700 mb-2">⚠️ Обов'язково:</h4>
-          <p className="text-gray-700">Клас ПОВИНЕН реалізувати ВСІ методи інтерфейсу, інакше буде помилка компіляції!</p>
+          <p className="text-gray-700">Неабстрактний клас ПОВИНЕН реалізувати ВСІ методи інтерфейсу, інакше буде помилка компіляції!</p>
         </div>
       </div>
     )
@@ -256,6 +255,111 @@ const Part2 = () => {
             <p className="text-gray-700 text-sm">Можна успадкувати тільки один</p>
             <code className="text-xs bg-white p-2 block mt-2 rounded">extends OnlyOne</code>
           </div>
+        </div>
+      </div>
+    )
+  },
+    {
+    title: "Клас може реалізувати кілька інтерфейсів",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-green-500 to-teal-600 text-white p-6 rounded-lg">
+          <h3 className="text-2xl font-bold mb-2">🎯 Множинна реалізація</h3>
+          <p className="text-lg">На відміну від класів, можна реалізувати необмежену кількість інтерфейсів!</p>
+        </div>
+
+        <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
+          <div className="font-mono text-sm">
+            <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Swimmable</span> {'{'}</div>
+            <div className="ml-4 text-gray-700">void swim();</div>
+            <div>{'}'}</div>
+            <div className="mt-2"><span className="text-blue-600">interface</span> <span className="text-purple-600">Flyable</span> {'{'}</div>
+            <div className="ml-4 text-gray-700">void fly();</div>
+            <div>{'}'}</div>
+            <div className="mt-4 text-gray-500">{'// Качка може і плавати, і літати!'}</div>
+            <div><span className="text-blue-600">class</span> <span className="text-purple-600">Duck</span> <span className="text-blue-600">implements</span> Swimmable, Flyable {'{'}</div>
+            <div className="ml-4 text-gray-700">@Override</div>
+            <div className="ml-4"><span className="text-blue-600">public void</span> swim() {'{'}</div>
+            <div className="ml-8 text-gray-600">System.out.println("Качка плаває");</div>
+            <div className="ml-4">{'}'}</div>
+            <div className="ml-4 text-gray-700">@Override</div>
+            <div className="ml-4"><span className="text-blue-600">public void</span> fly() {'{'}</div>
+            <div className="ml-8 text-gray-600">System.out.println("Качка літає");</div>
+            <div className="ml-4">{'}'}</div>
+            <div>{'}'}</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+            <h4 className="font-bold text-green-700 mb-2">✅ Інтерфейси</h4>
+            <p className="text-gray-700 text-sm">Можна реалізувати багато</p>
+            <code className="text-xs bg-white p-2 block mt-2 rounded">implements A, B, C</code>
+          </div>
+          <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+            <h4 className="font-bold text-blue-700 mb-2">⚠️ Класи</h4>
+            <p className="text-gray-700 text-sm">Можна успадкувати тільки один</p>
+            <code className="text-xs bg-white p-2 block mt-2 rounded">extends OnlyOne</code>
+          </div>
+        </div>
+      </div>
+    )
+  },
+    {
+    title: "Конфлікт default-методів при множинному успадкуванні",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-rose-500 to-orange-500 text-white p-6 rounded-lg">
+          <h3 className="text-2xl font-bold mb-2">💥 Проблема «ромба»</h3>
+          <p className="text-lg">Якщо два батьківські інтерфейси мають <code className="bg-white/20 px-1 rounded">default</code>-метод з однаковою сигнатурою — компілятор не знає, який обрати!</p>
+        </div>
+
+        <div className="bg-white p-5 rounded-lg shadow border border-gray-200">
+          <div className="font-mono text-sm">
+            <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Swimmable</span> {'{'}</div>
+            <div className="ml-4"><span className="text-blue-600">default void</span> move() {'{'}</div>
+            <div className="ml-8 text-gray-600">System.out.println("Пливу");</div>
+            <div className="ml-4">{'}'}</div>
+            <div>{'}'}</div>
+            <div className="mt-2"><span className="text-blue-600">interface</span> <span className="text-purple-600">Flyable</span> {'{'}</div>
+            <div className="ml-4"><span className="text-blue-600">default void</span> move() {'{'}</div>
+            <div className="ml-8 text-gray-600">System.out.println("Лечу");</div>
+            <div className="ml-4">{'}'}</div>
+            <div>{'}'}</div>
+            <div className="mt-4 text-red-500">{'// ❌ Помилка компіляції: inherits unrelated defaults for move()'}</div>
+            <div className="text-gray-400"><span>interface</span> <span>Amphibious</span> <span>extends</span> Swimmable, Flyable {'{ }'}</div>
+          </div>
+        </div>
+
+        <div className="bg-white p-5 rounded-lg shadow border-2 border-green-300">
+          <h4 className="font-bold text-green-700 mb-3">✅ Рішення: перевизначити метод явно</h4>
+          <div className="font-mono text-sm">
+            <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Amphibious</span> <span className="text-blue-600">extends</span> Swimmable, Flyable {'{'}</div>
+            <div className="ml-4 text-gray-700">@Override</div>
+            <div className="ml-4"><span className="text-blue-600">default void</span> move() {'{'}</div>
+            <div className="ml-8 text-gray-600">Swimmable.<span className="text-blue-600">super</span>.move();  <span className="text-gray-400">{'// явний вибір реалізації'}</span></div>
+            <div className="ml-8 text-gray-600">Flyable.<span className="text-blue-600">super</span>.move();</div>
+            <div className="ml-4">{'}'}</div>
+            <div>{'}'}</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-slate-50 p-4 rounded-lg border-l-4 border-slate-400">
+            <h4 className="font-bold text-slate-700 mb-2">🔑 Синтаксис</h4>
+            <code className="text-xs bg-white p-2 block rounded">ІмʼяІнтерфейсу.super.method()</code>
+            <p className="text-gray-700 text-sm mt-2">Працює лише для <em>безпосередніх</em> батьків</p>
+          </div>
+          <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-400">
+            <h4 className="font-bold text-amber-700 mb-2">📌 Де вирішувати</h4>
+            <p className="text-gray-700 text-sm">Конфлікт можна розв'язати і в інтерфейсі-нащадку, і в класі, що реалізує обидва інтерфейси</p>
+          </div>
+        </div>
+
+        <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+          <p className="text-gray-700 text-sm">
+            <span className="font-bold text-blue-700">💡 Чому в Java немає цієї проблеми з класами:</span> саме через ромбоподібне успадкування стану Java заборонила множинне успадкування класів. Інтерфейси не мають полів-стану, тому конфлікт зводиться лише до вибору реалізації методу — і його можна розв'язати вручну.
+          </p>
         </div>
       </div>
     )
