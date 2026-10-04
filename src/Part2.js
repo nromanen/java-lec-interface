@@ -364,6 +364,19 @@ const Part2 = () => {
           </div>
         </div>
 
+        <div className="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+          <h4 className="font-bold text-red-700 mb-2">🚫 А цей конфлікт не розв'язується взагалі</h4>
+          <div className="font-mono text-xs bg-white p-3 rounded mb-2">
+            <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Swimmable</span> {'{ '}<span className="text-blue-600">default</span> String move() {'{...} }'}</div>
+            <div><span className="text-blue-600">interface</span> <span className="text-purple-600">Flyable</span> {'{ '}<span className="text-blue-600">default</span> void move() {'{...} }'}</div>
+            <div className="mt-2 text-red-500">{'// ❌ error: both define move(), but with unrelated return types'}</div>
+            <div className="text-gray-400">class Amphibious implements Swimmable, Flyable {'{ }'}</div>
+          </div>
+          <p className="text-gray-700 text-sm">
+            Тип повернення <span className="font-bold">не входить у сигнатуру</span> — для компілятора це <em>один і той самий</em> метод <code className="bg-white px-1 rounded">move()</code>. Перевизначити його не вдасться: жоден тип повернення не підійде обом. Виправляти треба самі інтерфейси.
+          </p>
+        </div>
+
         <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
           <p className="text-gray-700 text-sm">
             <span className="font-bold text-blue-700">💡 Чому в Java немає цієї проблеми з класами:</span> саме через ромбоподібне успадкування стану Java заборонила множинне успадкування класів. Інтерфейси не мають полів-стану, тому конфлікт зводиться лише до вибору реалізації методу — і його можна розв'язати вручну.
