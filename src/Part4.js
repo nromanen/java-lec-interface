@@ -79,22 +79,12 @@ const Part4 = () => {
                 <tr className="border-b hover:bg-yellow-50">
                   <td className="p-3 font-semibold text-gray-700">Поля</td>
                   <td className="p-3">Тільки <code className="bg-yellow-100 px-2 py-1 rounded text-xs">public static final</code></td>
-                  <td className="p-3">Будь-які (private, protected, public)</td>
+                  <td className="p-3">Будь-які (private, protected, public, default)</td>
                 </tr>
                 <tr className="border-b hover:bg-pink-50">
                   <td className="p-3 font-semibold text-gray-700">Конструктор</td>
                   <td className="p-3 text-red-600">❌ Ні</td>
                   <td className="p-3 text-green-600">✅ Так</td>
-                </tr>
-                <tr className="border-b hover:bg-indigo-50">
-                  <td className="p-3 font-semibold text-gray-700">Модифікатори доступу</td>
-                  <td className="p-3">Тільки public</td>
-                  <td className="p-3">public, protected, private</td>
-                </tr>
-                <tr className="hover:bg-teal-50">
-                  <td className="p-3 font-semibold text-gray-700">Швидкість</td>
-                  <td className="p-3">Трохи повільніше</td>
-                  <td className="p-3">Трохи швидше</td>
                 </tr>
               </tbody>
             </table>
